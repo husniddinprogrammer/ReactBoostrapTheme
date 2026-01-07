@@ -12,12 +12,28 @@ import SportMessages from './components/sport-messages/SportMessages';
 import SponsoredMessages from './components/sponsored-messages/SponsoredMessages';
 import FormSection from './components/form-section/FormSection';
 import FooterSection from './components/footer-section/FooterSection';
-
+import { ThemeProvider } from './context/ThemeContext';
+import { useTheme } from './context/ThemeContext';
+import { useEffect } from 'react';
 
 function App() {
   return (
-    <div className="App">
-      <Container className='bg-white container w-75'>
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
+  );
+}
+
+function AppContent() {
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    document.body.className = theme === 'dark' ? 'bg-dark text-white' : 'bg-light text-dark';
+  }, [theme]);
+
+  return (
+    <div className={`App ${theme === 'dark' ? 'bg-dark text-white' : 'bg-light text-dark'} min-vh-100`}>
+      <Container className={`container w-75 ${theme === 'dark' ? 'bg-dark text-white' : 'bg-white text-dark'}`}>
         <MyNavbar />
         <MainCarousel />
         <TopMessages></TopMessages>
