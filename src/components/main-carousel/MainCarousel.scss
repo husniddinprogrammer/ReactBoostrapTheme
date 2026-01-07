@@ -1,0 +1,78 @@
+.carousel-caption {
+  left: 2rem !important;
+  right: auto !important;
+  padding-left: 0 !important;
+  text-align: left !important;
+}
+
+.carousel-item {
+  position: relative;
+}
+
+.side-indicators {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 10;
+}
+
+.side-indicator {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 250px;
+
+  &:hover {
+    transform: translateX(-5px);
+    color: white;
+  }
+
+  &.active {
+    transform: translateX(-10px);
+    color: white;
+  }
+}
+
+.side-indicator-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.side-indicator-content {
+  flex: 1;
+}
+
+.side-indicator-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color:rgb(231, 231, 231);
+  
+  &:hover {
+    color: white;
+  }
+
+  &.active {
+    color: white;
+  }
+}
+
+.side-indicator-about {
+  margin: 0;
+  font-size: 0.875rem;
+  color: rgb(231, 231, 231);
+  line-height: 1.2;
+   &:hover {
+    color: white;
+  }
+
+  &.active {
+    color: white;
+  }
+}
